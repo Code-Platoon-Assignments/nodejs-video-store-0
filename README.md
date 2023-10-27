@@ -68,15 +68,15 @@ Sources: [This stack overflow post](https://stackoverflow.com/a/69059786/2237152
 
 Your tests should now pass.
 
-4. Update the test to check if `customer.createdAt` is a valid date. See [this article](https://geekflare.com/javascript-date-fns/) and [the date-fns isValid function docs](https://date-fns.org/v2.30.0/docs/isValid). *We haven't implemented the feature yet so this test will fail.*
+4. Update the test to check if `customer.createdAt` is a valid date. Use the [date-fns parseISO](https://date-fns.org/v2.30.0/docs/parseISO) function to parse the `createdAt` datetime string into a Date and then use the [date-fns isValid](https://date-fns.org/v2.30.0/docs/isValid) function to check it. See [this article](https://geekflare.com/javascript-date-fns/). *We haven't implemented the feature yet so this test will fail.*
 
-5. Update `createCustomer()` so that `createdAt` is now today's date in mm/DD/yyy format. See [the date-fns format function docs](https://date-fns.org/v2.30.0/docs/format). `createCustomer()` should return something like this:
+5. Update `createCustomer()` so that `createdAt` is now today's date in an ISO datetime string. See [the date-fns formatISO function docs](https://date-fns.org/v2.30.0/docs/formatISO). `createCustomer()` should return something like this:
 
 ```json
 {
   name: 'alice',
   id: 'f623c358-ec00-445d-adc3-28aa74029991',
-  createdAt: '10/27/2023'
+  createdAt: '2023-10-27T15:03:53-05:00',
 }
 ```
 
