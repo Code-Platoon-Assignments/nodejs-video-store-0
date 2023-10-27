@@ -1,16 +1,20 @@
 // customer.js
 import { v4 } from "uuid";
-import { format, isValid, toDate } from "date-fns";
+import { format } from "date-fns";
 
 
 function createCustomer(name) {
-    return {
-      name: name.toLowerCase(),
-      id: v4(),
-      createdAt: format(new Date(), 'MM/dd/yyyy'), // Date() vs new Date() do different things
-    }
-}
+  if (!name) {
+    return false;
+  }
 
-console.log(isValid(new Date(c.createdAt)))
+  const createdAt = format(new Date(), 'MM/dd/yyyy') // Date() vs new Date() do different things
+
+  return {
+    name: name.toLowerCase(),
+    id: v4(),
+    createdAt,
+  }
+}
 
 export default createCustomer
