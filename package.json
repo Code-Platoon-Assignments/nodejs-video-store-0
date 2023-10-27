@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "bar": "echo 'goodbye, world!'",
     "foo": "npm run bar",
-    "test": "jest",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
     "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^2.30.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

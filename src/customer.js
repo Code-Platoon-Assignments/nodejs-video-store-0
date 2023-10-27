@@ -1,15 +1,16 @@
 // customer.js
-const uuid = require('uuid');
+import { v4 } from "uuid";
+import { format, isValid, toDate } from "date-fns";
 
-const uuidv4 = uuid.v4;
 
 function createCustomer(name) {
     return {
       name: name.toLowerCase(),
-      id: uuidv4(),
+      id: v4(),
+      createdAt: format(new Date(), 'MM/dd/yyyy'), // Date() vs new Date() do different things
     }
 }
 
-module.exports = {
-    createCustomer,
-}
+console.log(isValid(new Date(c.createdAt)))
+
+export default createCustomer

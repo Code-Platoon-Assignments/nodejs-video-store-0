@@ -1,6 +1,5 @@
 // store.test.js
-const store = require('../src/store');
-const createStore = store.createStore;
+import createStore from '../src/store.js'
 
 test('createStore() new store has customers and videos arrays', () => {
     const newStore = createStore();

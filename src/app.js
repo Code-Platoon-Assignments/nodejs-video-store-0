@@ -1,13 +1,7 @@
-const uuid = require('uuid');
-const store = require('./store')
-const customer = require('./customer')
+// app.js
 
-const uuidv4 = uuid.v4;
+import createCustomer from './customer.js'
+import createStore from './store.js'
 
-console.log('hello, world!')
-const myUUID = uuidv4(); // Create a version 4 UUID
-console.log('uuid is ', myUUID);
-
-console.log('video store is ', store.createStore())
-
-console.log('new customer ', customer.createCustomer('Alice'))
+console.log('video store is ', createStore())
+console.log('new customer ', createCustomer('Alice'))

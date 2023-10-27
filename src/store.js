@@ -7,6 +7,4 @@ function createStore() {
     }
 }
 
-module.exports = {
-    createStore,
-}
+export default createStore;
