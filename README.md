@@ -42,7 +42,7 @@ You must have node.js and npm installed.
 
 Your tests should now pass.
 
-4. Update the test to check if `customer.createdAt` is a valid date. See [this article](https://geekflare.com/javascript-date-fns/) and [the date-fns isValid function docs](https://date-fns.org/v2.30.0/docs/isValid). 
+4. Update the test to check if `customer.createdAt` is a valid date. See [this article](https://geekflare.com/javascript-date-fns/) and [the date-fns isValid function docs](https://date-fns.org/v2.30.0/docs/isValid). *We haven't implemented the feature yet so this test will fail.*
 
 5. Update `createCustomer()` so that `createdAt` is now today's date in mm/DD/yyy format. See [the date-fns format function docs](https://date-fns.org/v2.30.0/docs/format). `createCustomer()` should return something like this:
 
