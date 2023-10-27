@@ -18,6 +18,32 @@ You must have node.js and npm installed.
 
 2. Refactor the exising code to use ES Module imports / exports instead of the CommonJS imports / exports they are currently using.
 
+**IMPORTANT:** As of 2023, Jest does not support ES Modules out-of-the-box. To get your tests to run wth ES Modules you will have to do a couple things. This is a common issue with JS projects - the JS ecosystem is not as standardized as, say, Python.
+
+
+**First, get ES Modules working with `app.js` and the files it imports - get your program running. Then do this.**
+
+1. Add "type": "module" to package.json (you may have already done this)
+
+2. Update the test script in package.json to **exactly** this:
+
+```javascript
+"scripts": {
+  "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
+}
+```
+
+3. In your project root directory, Create a jest.config.js file with exactly the following content:
+
+
+```javascript
+export default { transform: {} }
+```
+
+**You will still need to change the test file to do ES Module imports.** But now your tests should run once you do.
+
+Sources: [This stack overflow post](https://stackoverflow.com/a/69059786/22371523) and [the jest docs](https://jestjs.io/docs/ecmascript-modules). The stack overflow post is easier to understand.
+
 #### Write tests for `createCustomer()`
 
 1. Add a test in a file named `customer.test.js` that tests `createCustomer` to confirm it returns an object with a `name` property and an `id` property which is not an empty string and contains a valid UUID. Read the [UUID github README](https://github.com/uuidjs/uuid#readme) docs to see how to do this.
