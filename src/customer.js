@@ -1,6 +1,6 @@
 // customer.js
 import { v4 } from "uuid";
-import { format } from "date-fns";
+import { formatISO } from "date-fns";
 
 
 function createCustomer(name) {
@@ -8,7 +8,7 @@ function createCustomer(name) {
     return false;
   }
 
-  const createdAt = format(new Date(), 'MM/dd/yyyy') // Date() vs new Date() do different things
+  const createdAt = formatISO(new Date()) // Date() vs new Date() do different things
 
   return {
     name: name.toLowerCase(),

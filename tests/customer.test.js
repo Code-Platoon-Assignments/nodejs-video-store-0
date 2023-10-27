@@ -1,5 +1,5 @@
 // customer.test.js
-import { isValid, toDate } from "date-fns";
+import { isValid, parseISO } from "date-fns";
 import createCustomer from "../src/customer";
 
 test('createCustomer() returns customer with `name` and `id` proeprties', () => {
@@ -19,6 +19,6 @@ test('createCustomer() returns customer with `createdAt` property', () => {
 })
 
 test('createCustomer() `createdAt` is a valid date', () => {
-    const { createdAt } = createCustomer('alice');
-    expect(isValid(toDate(createdAt))).toBe(true);
+    const customer = createCustomer('alice');
+    expect(isValid(parseISO(customer.createdAt))).toBe(true);
 })
